@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../model/british_museum.dart';
+import '../model/NHM.dart';
 import 'ar_page2.dart';
 
 class DetailsScreen extends StatelessWidget {
-  final Collection collection;
-  const DetailsScreen({Key?key, required this.collection}) : super(key: key);
+  final Collection3 collection3;
+  const DetailsScreen({Key?key, required this.collection3}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class DetailsScreen extends StatelessWidget {
       backgroundColor: Colors.orange,
       appBar: buildAppBar(context),
       body:Body(
-        collection: collection,
+        collection3: collection3,
       ),
     );
   }
@@ -45,8 +45,8 @@ AppBar buildAppBar(BuildContext context) {
 }
 
 class Body extends StatelessWidget {
-  final Collection collection;
-  const Body({Key?key, required this.collection}) : super(key: key);
+  final Collection3 collection3;
+  const Body({Key?key, required this.collection3}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -71,22 +71,22 @@ class Body extends StatelessWidget {
                 children: [
                   Center(
                     child:Hero(
-                      tag: collection.name,
+                      tag: collection3.name,
                       child: CollectionPoster(
                         size: size,
-                        image: collection.image,
+                        image: collection3.image,
                       ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10.0),
                     child: Text(
-                      collection.name,
+                      collection3.name,
                       style: Theme.of(context).textTheme.headline4,
                     ),
                   ),
                   Text(
-                    collection.date,
+                    collection3.date,
                     style:const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
@@ -94,7 +94,7 @@ class Body extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    collection.author,
+                    collection3.author,
                     style:const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
@@ -102,7 +102,7 @@ class Body extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    collection.type,
+                    collection3.type,
                     style:const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
@@ -113,7 +113,7 @@ class Body extends StatelessWidget {
                     padding:
                     const EdgeInsets.symmetric(vertical: 10.0),
                     child: Text(
-                      collection.description,
+                      collection3.description,
                       style:const TextStyle(
                         color:Colors.black45,
                         fontWeight: FontWeight.w300,
@@ -125,7 +125,7 @@ class Body extends StatelessWidget {
               ),
             ),
             const SizedBox(height:30),
-            ARSceneButton(image:collection.image),
+            ARSceneButton(image:collection3.image),
           ],
         ),
       ),

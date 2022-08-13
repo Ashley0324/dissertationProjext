@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:test3/pages/details_page.dart';
-import '../model/british_museum.dart';
+import 'package:test3/pages/detail_page3.dart';
+import '../model/NHM.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
     Key?key,
     required this.itemIndex,
-    required this.collection,
+    required this.collection3,
     required this.press
   }) : super(key: key);
   final int itemIndex;
-  final Collection collection;
+  final Collection3 collection3;
   final Function press;
 
   @override
@@ -29,10 +29,10 @@ class CategoryCard extends StatelessWidget {
               GestureDetector(
                 onTap:(){
                   Navigator.push(context,MaterialPageRoute(builder: (_){
-                    return DetailsScreen(collection: collections[itemIndex]);
+                    return DetailsScreen(collection3: collection3);
                   }));
                 },),
-               Container(
+              Container(
                 height: 136,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(22),
@@ -49,7 +49,7 @@ class CategoryCard extends StatelessWidget {
                   top:0,
                   right: 0,
                   child: Hero(
-                      tag:collection.name,
+                      tag:collection3.name,
                       child: Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20)
@@ -58,7 +58,7 @@ class CategoryCard extends StatelessWidget {
                           height:160,
                           width:200,
                           child:Image.network(
-                            collection.image,
+                            collection3.image,
                             fit:BoxFit.fitWidth,
                           )
                       )
@@ -79,7 +79,7 @@ class CategoryCard extends StatelessWidget {
                               horizontal: 16.0
                           ),
                           child: Text(
-                            collection.name,
+                            collection3.name,
                             maxLines: 1,
                             overflow: TextOverflow.fade,
                             style: TextStyle(
@@ -90,8 +90,8 @@ class CategoryCard extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                            horizontal: 20.0
-                        ),
+                              horizontal: 20.0
+                          ),
                           child: TextButton(
                             style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
@@ -99,11 +99,11 @@ class CategoryCard extends StatelessWidget {
                             onPressed: (){
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => DetailsScreen(collection: collections[itemIndex])),
+                                MaterialPageRoute(builder: (context) => DetailsScreen(collection3: collection3)),
                               );
                             },
                             child: const Text(
-                                'Read more >>',
+                              'Read more >>',
                               style: TextStyle(
                                 fontStyle: FontStyle.italic,
                                 decoration: TextDecoration.underline,
@@ -127,7 +127,7 @@ class CategoryCard extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            collection.location,
+                            collection3.location,
                             style: Theme.of(context).textTheme.button,
                           ),
                         ),

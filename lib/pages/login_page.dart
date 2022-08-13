@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+import 'home.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key?key}) : super(key: key);
@@ -195,7 +195,7 @@ class LoginBtnIconWidget extends StatelessWidget {
           onTap: () {
             Navigator.of(context).push(
                 MaterialPageRoute(
-                    builder: (context)=>StatusPage()
+                    builder: (context)=>MyApp()
                 )
             );
           },
